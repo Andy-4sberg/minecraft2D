@@ -392,6 +392,7 @@ var blockSize = 60;
 function drawEverything() {
     var thingsToDraw = [];
     drawBlocks(thingsToDraw);
+    drawPerson(thingsToDraw);
     r.render(thingsToDraw);
 }
 
@@ -410,6 +411,11 @@ function drawBlocks(thingsToDraw) {[];
             thingsToDraw.push(['filled ' + color + ' rect', x * blockSize + 1, y * blockSize + 1, blockSize-1, blockSize-1]);
         }
     }
+}
+
+function drawPerson(thingsToDraw) {
+    thingsToDraw.push(['filled blue rect', blockSize * (person.x + 0.25), blockSize * (person.y - 1), blockSize / 2, blockSize / 2]); // HEAD
+    thingsToDraw.push(['filled blue rect', blockSize * (person.x + 0.1), blockSize * (person.y - 0.5), blockSize * (1 - .2), blockSize * 1.5]); // BODY
 }
 
 setInterval(drawEverything, 20);
