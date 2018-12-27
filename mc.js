@@ -461,6 +461,9 @@ function fall() {
     if (!isOnHalfBlock() && blockBeneath() === 'air') {
         fallSpeed = fallSpeed + 0.01;
         person.y = person.y + fallSpeed;
+        if (blockBeneath() !== 'air') {
+            person.y = Math.floor(person.y);
+        }
     }
     else {
         fallSpeed = 0;
