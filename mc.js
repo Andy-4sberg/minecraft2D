@@ -386,6 +386,7 @@ var person = {
 
 var blockSize = 60;
 var showCoords = true;
+var fallSpeed = 0;
 
 ////////////////////////////
 // DRAW THE THINGS
@@ -457,10 +458,12 @@ function dig() {
 }
 
 function fall() {
-    if (!isOnHalfBlock()) {
-        if (blockBeneath() === 'air') {
-            person.y = person.y + 0.01;
-        }
+    if (!isOnHalfBlock() && blockBeneath() === 'air') {
+        fallSpeed = fallSpeed + 0.01;
+        person.y = person.y + fallSpeed;
+    }
+    else {
+        fallSpeed = 0;
     }
 }
 
