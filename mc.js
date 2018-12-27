@@ -458,7 +458,7 @@ function dig() {
 }
 
 function fall() {
-    if (!isOnHalfBlock() && blockBeneath() === 'air') {
+    if (blockBeneath() === 'air') {
         fallSpeed = fallSpeed + 0.01;
         person.y = person.y + fallSpeed;
         if (blockBeneath() !== 'air') {
