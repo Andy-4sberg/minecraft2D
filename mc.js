@@ -459,7 +459,7 @@ function dig() {
 function fall() {
     if (!isOnHalfBlock()) {
         if (blockBeneath() === 'air') {
-            person.y = person.y + 1;
+            person.y = person.y + 0.01;
         }
     }
 }
