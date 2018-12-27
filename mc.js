@@ -441,7 +441,11 @@ r.onKeyDown(function(key) {
 });
 
 function dig() {
-    if (blocks[person.y+1][person.x] !== 'bedrock') {
+    if (blockBeneath() !== 'bedrock') {
         blocks[person.y + 1][person.x] = 'air';
     }
+}
+
+function blockBeneath() {
+    return blocks[person.y+1][person.x];
 }
