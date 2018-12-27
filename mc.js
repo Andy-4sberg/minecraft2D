@@ -434,6 +434,12 @@ setInterval(drawEverything, 20);
 // CHANGE THE THINGS
 ////////////////////////////
 
+function updateThingsAllTheTime() {
+    
+}
+
+setInterval(updateThingsAllTheTime, 20);
+
 r.onKeyDown(function(key) {
     console.log("KEY: " + key);
     var blocksToMove = (person.crouched) ? 0.5 : 1;
