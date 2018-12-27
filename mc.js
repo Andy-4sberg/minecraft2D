@@ -446,15 +446,21 @@ r.onKeyDown(function(key) {
 });
 
 function dig() {
-    if (blockBeneath() !== 'bedrock') {
+    if (!isOnHalfBlock() && blockBeneath() !== 'bedrock') {
         blocks[person.y + 1][person.x] = 'air';
     }
 }
 
 function fall() {
-    if (blockBeneath() === 'air') {
-        person.y = person.y + 1;
+    if (!isOnHalfBlock()) {
+        if (blockBeneath() === 'air') {
+            person.y = person.y + 1;
+        }
     }
+}
+
+function isOnHalfBlock() {
+    return (person.x !== Math.floor(person.x));
 }
 
 function blockBeneath() {
