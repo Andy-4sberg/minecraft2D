@@ -361,6 +361,29 @@ fitToWindow();
 // THINGS TO KEEP TRACK OF
 ////////////////////////////
 
+var blocks = [
+    ["air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ],
+    ["air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ],
+    ["air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ],
+    ["air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ],
+    ["air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ],
+    ["air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ,"air"    ],
+    ["grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"air"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ,"grass"  ],
+    ["dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"air"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ],
+    ["stone"  ,"dirt"   ,"dirt"   ,"stone"  ,"dirt"   ,"stone"  ,"dirt"   ,"dirt"   ,"dirt"   ,"stone"  ,"stone"  ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ],
+    ["stone"  ,"stone"  ,"dirt"   ,"dirt"   ,"stone"  ,"stone"  ,"dirt"   ,"dirt"   ,"stone"  ,"stone"  ,"stone"  ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ,"dirt"   ],
+    ["dirt"   ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"gravel" ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"dirt"   ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ],
+    ["stone"  ,"dirt"   ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"dirt"   ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ],
+    ["stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ,"stone"  ],
+    ["bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock","bedrock"]
+];
+
+var person = {
+    x: 0,
+    y: 5
+};
+
+var blockSize = 60;
 
 ////////////////////////////
 // DRAW THE THINGS
