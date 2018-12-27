@@ -384,6 +384,7 @@ var person = {
 };
 
 var blockSize = 60;
+var showCoords = true;
 
 ////////////////////////////
 // DRAW THE THINGS
@@ -393,6 +394,7 @@ function drawEverything() {
     var thingsToDraw = [];
     drawBlocks(thingsToDraw);
     drawPerson(thingsToDraw);
+    drawCoords(thingsToDraw);
     r.render(thingsToDraw);
 }
 
@@ -418,6 +420,12 @@ function drawPerson(thingsToDraw) {
     thingsToDraw.push(['filled blue rect', blockSize * (person.x + 0.1), blockSize * (person.y - 0.5), blockSize * (1 - .2), blockSize * 1.5]); // BODY
 }
 
+function drawCoords(thingsToDraw) {
+    if (showCoords) {
+        thingsToDraw.push(['text', ('X=' + person.x + ', Y=' + person.y), 10, 10, {size:20, baseline:'top'}]);
+    }
+}
+
 setInterval(drawEverything, 20);
 
 ////////////////////////////
@@ -428,4 +436,5 @@ r.onKeyDown(function(key) {
     console.log("KEY: " + key);
     if (key === 37 && person.x > 0                   ) { person.x = person.x - 1; } // LEFT
     if (key === 39 && person.x < blocks[0].length - 1) { person.x = person.x + 1; } // RIGHT
+    if (key === 16) { showCoords = !showCoords; } // SHIFT
 });
