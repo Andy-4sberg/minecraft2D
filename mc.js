@@ -436,13 +436,21 @@ r.onKeyDown(function(key) {
     console.log("KEY: " + key);
     if (key === 37 && person.x > 0                   ) { person.x = person.x - 1; } // LEFT
     if (key === 39 && person.x < blocks[0].length - 1) { person.x = person.x + 1; } // RIGHT
+    if (key === 40) { person.crouched = !(person.crouched); } // DOWN
     if (key === 32) { dig(); } // SPACE
     if (key === 16) { showCoords = !showCoords; } // SHIFT
+    fall();
 });
 
 function dig() {
     if (blockBeneath() !== 'bedrock') {
         blocks[person.y + 1][person.x] = 'air';
+    }
+}
+
+function fall() {
+    if (blockBeneath() === 'air') {
+        person.y = person.y + 1;
     }
 }
 
