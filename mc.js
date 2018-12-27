@@ -452,7 +452,7 @@ r.onKeyDown(function(key) {
 
 function dig() {
     if (!isOnHalfBlock() && blockBeneath() !== 'bedrock') {
-        blocks[person.y + 1][person.x] = 'air';
+        blocks[Math.floor(person.y)+1][Math.floor(person.x)] = 'air';
     }
 }
 
@@ -469,5 +469,5 @@ function isOnHalfBlock() {
 }
 
 function blockBeneath() {
-    return blocks[person.y+1][person.x];
+    return blocks[Math.floor(person.y)+1][Math.floor(person.x)];
 }
