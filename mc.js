@@ -435,7 +435,7 @@ setInterval(drawEverything, 20);
 ////////////////////////////
 
 function updateThingsAllTheTime() {
-    
+    fall();
 }
 
 setInterval(updateThingsAllTheTime, 20);
@@ -448,7 +448,6 @@ r.onKeyDown(function(key) {
     if (key === 40) { person.crouched = !(person.crouched); } // DOWN
     if (key === 32) { dig(); } // SPACE
     if (key === 16) { showCoords = !showCoords; } // SHIFT
-    fall();
 });
 
 function dig() {
