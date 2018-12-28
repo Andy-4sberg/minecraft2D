@@ -345,6 +345,18 @@ function Renderer(config, width, height, textConfig) {
     };
 }
 
+var r = Renderer('top left');
+
+function fitToWindow() { r.resize(window.innerWidth-4, window.innerHeight-4); }
+
+var c = r.getCanvas();
+c.style.border = '2px solid red';
+window.addEventListener('resize', fitToWindow);
+document.body.style.margin = '0';
+document.body.style.overflow = 'hidden';
+document.body.appendChild(c);
+fitToWindow();
+
 ////////////////////////////
 // THINGS TO KEEP TRACK OF
 ////////////////////////////
