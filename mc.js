@@ -424,3 +424,6 @@ setInterval(drawEverything, 20);
 // CHANGE THE THINGS
 ////////////////////////////
 
+r.onKeyDown(function(key) {
+    console.log("KEY: " + key);
+});
