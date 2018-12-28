@@ -389,6 +389,30 @@ var blockSize = 60;
 // DRAW THE THINGS
 ////////////////////////////
 
+function drawEverything() {
+    var thingsToDraw = [];
+    drawBlocks(thingsToDraw);
+    r.render(thingsToDraw);
+}
+
+function drawBlocks(thingsToDraw) {[];
+    for(var y = 0; y < blocks.length; y++) {
+        var layer = blocks[y];
+        for(var x = 0; x < layer.length; x++) {
+            var block = layer[x];
+            var color = 'pink'
+            if (block === 'air'    ) { color = 'white'; }
+            if (block === 'dirt'   ) { color = '#884444'; }
+            if (block === 'stone'  ) { color = '#444444'; }
+            if (block === 'grass'  ) { color = '#00FF00'; }
+            if (block === 'gravel' ) { color = '#888888'; }
+            if (block === 'bedrock') { color = 'black'; }
+            thingsToDraw.push(['filled ' + color + ' rect', x * blockSize + 1, y * blockSize + 1, blockSize-1, blockSize-1]);
+        }
+    }
+}
+
+setInterval(drawEverything, 20);
 
 ////////////////////////////
 // CHANGE THE THINGS
